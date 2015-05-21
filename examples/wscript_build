@@ -1,0 +1,32 @@
+#! /usr/bin/env python
+# encoding: utf-8
+
+bld.program(features='cxx',
+            source='create_typelist.cpp',
+            target='create_typelist',
+            use=['meta_includes'])
+
+bld.program(features='cxx',
+            source='append_types_to_empty_list.cpp',
+            target='append_types_to_empty_list',
+            use=['meta_includes'])
+
+bld.program(features='cxx',
+            source='append_types_to_list.cpp',
+            target='append_types_to_list',
+            use=['meta_includes'])
+
+bld.program(features='cxx',
+            source='finding_types.cpp',
+            target='finding_types',
+            use=['meta_includes'])
+
+bld.program(features='cxx',
+            source='visiting_types.cpp',
+            target='visiting_types',
+            use=['meta_includes'])
+
+bld.program(features='cxx',
+            source='remove_types.cpp',
+            target='remove_types',
+            use=['meta_includes'])
