@@ -12,8 +12,7 @@
 int main()
 {
     using types = meta::typelist<double,float>;
-    using result = types::template
-        append<int>;
+    using result = types::append<int>;
 
     static_assert(std::is_same<result,
          meta::typelist<double,float,int>>::value, "");

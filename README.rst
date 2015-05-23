@@ -83,9 +83,7 @@ Example:
 
     int main()
     {
-        using types = meta::typelist<>::template
-            append<double>::template
-            append<float>;
+        using types = meta::typelist<>::append<double>::append<float>;
 
         static_assert(std::is_same<types,
             meta::typelist<double,float>>::value, "");
@@ -102,8 +100,7 @@ an existing ``meta::typelist``.
     int main()
     {
         using types = meta::typelist<double,float>;
-        using result = types::template
-            append<int>;
+        using result = types::append<int>;
 
         static_assert(std::is_same<result,
              meta::typelist<double,float,int>>::value, "");
@@ -146,12 +143,10 @@ Example:
     {
         using types = meta::typelist<std::vector<int>, int, double>;
 
-        using result = types::template
-            find<std::is_integral>;
+        using result = types::find<std::is_integral>;
 
         static_assert(std::is_same<result, int>::value, "");
     }
-
 
 Visiting types
 ..............
@@ -183,9 +178,8 @@ Example:
     {
         using types = meta::typelist<std::vector<int>, int, double>;
 
-        types::template visit(print_types());
+        types::visit(print_types());
     }
-
 
 Removing types
 ..............
@@ -214,7 +208,7 @@ Example:
     {
         using types = meta::typelist<std::vector<int>, int, double>;
 
-        using result = types::template remove<std::is_integral>;
+        using result = types::remove<std::is_integral>;
 
         static_assert(std::is_same<result,
             meta::typelist<std::vector<int>, double>>::value, "");

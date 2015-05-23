@@ -15,8 +15,7 @@ int main()
 {
     using types = meta::typelist<std::vector<int>, int, double>;
 
-    using result = types::template
-        find<std::is_integral>;
+    using result = types::find<std::is_integral>;
 
     static_assert(std::is_same<result, int>::value, "");
 }

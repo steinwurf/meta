@@ -26,5 +26,5 @@ int main()
 {
     using types = meta::typelist<std::vector<int>, int, double>;
 
-    types::template visit(print_types());
+    types::visit(print_types());
 }

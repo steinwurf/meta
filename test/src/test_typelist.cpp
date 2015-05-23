@@ -18,9 +18,7 @@ namespace
 TEST(test_type_list, append)
 {
     {
-        using types = meta::typelist<>::template
-            append<int>::template
-            append<bool>;
+        using types = meta::typelist<>::append<int>::append<bool>;
 
         bool value = std::is_same<types,
             meta::typelist<int,bool>>::value;
@@ -29,9 +27,7 @@ TEST(test_type_list, append)
     }
 
     {
-        using types = meta::typelist<double, float>::template
-            append<int>::template
-            append<bool>;
+        using types = meta::typelist<double, float>::append<int>::append<bool>;
 
         bool value = std::is_same<types,
             meta::typelist<double,float,int,bool>>::value;
@@ -45,8 +41,7 @@ TEST(test_type_list, find)
     {
         // Test find when no type exists using default NotFound
         using types = meta::typelist<double,float>;
-        using result = types::template
-            find<std::is_integral>;
+        using result = types::find<std::is_integral>;
 
         bool value = std::is_same<result, meta::not_found>::value;
 
@@ -56,8 +51,7 @@ TEST(test_type_list, find)
     {
         // Test find when no type exists using custom NotFound
         using types = meta::typelist<double,float>;
-        using result = types::template
-            find<std::is_integral, dummy>;
+        using result = types::find<std::is_integral, dummy>;
 
         bool value = std::is_same<result, dummy>::value;
 
@@ -67,8 +61,7 @@ TEST(test_type_list, find)
     {
         // Test find when type exists
         using types = meta::typelist<double,int,float>;
-        using result = types::template
-            find<std::is_integral>;
+        using result = types::find<std::is_integral>;
 
         bool value = std::is_same<result, int>::value;
 
@@ -78,8 +71,7 @@ TEST(test_type_list, find)
     {
         // Test find when type exists and custom NotFound is used
         using types = meta::typelist<double,int,float>;
-        using result = types::template
-            find<std::is_integral, dummy>;
+        using result = types::find<std::is_integral, dummy>;
 
         bool value = std::is_same<result, int>::value;
 
@@ -109,8 +101,7 @@ TEST(test_type_list, visit)
     EXPECT_TRUE(check1.m_float);
     EXPECT_TRUE(check1.m_double);
 
-    using types2 = types1::template
-        append<int>;
+    using types2 = types1::append<int>;
 
     count check2;
     types2::visit(check2);
@@ -125,7 +116,7 @@ TEST(test_type_list, remove)
     {
         // Test remove when type matches
         using types = meta::typelist<double,int,float,int>;
-        using result = types::template remove<std::is_integral>;
+        using result = types::remove<std::is_integral>;
 
         bool value = std::is_same<result,
             meta::typelist<double,float>>::value;
@@ -136,7 +127,7 @@ TEST(test_type_list, remove)
     {
         // Test remove when no type matches
         using types = meta::typelist<double, float>;
-        using result = types::template remove<std::is_integral>;
+        using result = types::remove<std::is_integral>;
 
         bool value = std::is_same<result,
             meta::typelist<double,float>>::value;
@@ -147,7 +138,7 @@ TEST(test_type_list, remove)
     {
         // Test remove with empty list
         using types = meta::typelist<>;
-        using result = types::template remove<std::is_integral>;
+        using result = types::remove<std::is_integral>;
 
         bool value = std::is_same<result,
             meta::typelist<>>::value;
