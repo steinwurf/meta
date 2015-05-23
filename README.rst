@@ -22,19 +22,19 @@ meta library <https://github.com/ericniebler/meta>`_, `Fatal
 <https://github.com/facebook/fatal/>`_ and `Turbo
 <https://github.com/Manu343726/Turbo>`_ just to name a few. Most of these
 libraries provide extensive meta programming support. However, since we
-only needed limited functionality and we needed MSVC (the Microsoft Visual
-Studio Compiler) support we decided to implement the functionality
-ourselves. In the above list supports only Boost.MPL supports MSVC because
-they still don't have C++11 ``constexpr`` support, yeah it sucks.
+only needed limited functionality and MSVC (the Microsoft Visual Studio
+Compiler) support we decided to implement the functionality ourselves. In
+the above list only Boost.MPL is supported by MSVC because of missing C++11
+``constexpr`` support, yeah it sucks.
 
 Usage
 -----
 
-The ``meta::typelist`` struct is the main component of the meta
-library. The ``meta::typelist`` currently provides a minimal API for
-e.g. appending and removing types from the list (since that was what we
-needed). If you have additional ideas to how the library can be extended
-feel free to open an issue or submit pull-requests.
+The ``meta::typelist`` struct is the main component of the library. It
+currently provides a minimal API for e.g. appending and removing types from
+the list (since that was what we needed). If you have additional ideas to
+how the library can be extended feel free to open an issue or submit
+pull-requests.
 
 Header-only
 ...........
