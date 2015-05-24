@@ -6,4 +6,4 @@ every change, see the Git log.
 
 Latest
 ------
-* tbd
+* Initial implementation of the ``meta::typelist``

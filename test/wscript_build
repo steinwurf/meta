@@ -1,0 +1,7 @@
+# encoding: utf-8
+
+bld.program(
+    features='cxx test',
+    source=['meta_tests.cpp'] + bld.path.ant_glob('src/*.cpp'),
+    target='meta_tests',
+    use=['meta_includes', 'gtest'])
