@@ -6,6 +6,10 @@ every change, see the Git log.
 
 Latest
 ------
+* tbd
+
+1.1.0
+-----
 * Minor: Added the ``meta::concatenate`` meta free function that takes two
   typelists and concatenates them. In addition a ``extend`` "member
   function" was added to the ``meta::typelist``.
