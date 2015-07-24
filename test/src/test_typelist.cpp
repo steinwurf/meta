@@ -15,6 +15,7 @@ namespace
     struct dummy{};
 }
 
+// Tests that our concatenate meta function works properly
 TEST(test_type_list, append)
 {
     {
@@ -35,6 +36,69 @@ TEST(test_type_list, append)
         EXPECT_TRUE(value);
     }
 }
+
+
+TEST(test_type_list, extend)
+{
+    {
+        using list_one = meta::typelist<>;
+        using list_two = meta::typelist<>;
+
+        using result = list_one::extend<list_two>;
+
+        bool value = std::is_same<result,
+            meta::typelist<>>::value;
+
+        EXPECT_TRUE(value);
+    }
+
+    {
+        using list_one = meta::typelist<>;
+        using list_two = meta::typelist<int>;
+
+        using result = list_one::extend<list_two>;
+
+        bool value = std::is_same<result,
+            meta::typelist<int>>::value;
+
+        EXPECT_TRUE(value);
+    }
+
+    {
+        using list_one = meta::typelist<int>;
+        using list_two = meta::typelist<>;
+
+        using result = list_one::extend<list_two>;
+
+        bool value = std::is_same<result,
+            meta::typelist<int>>::value;
+
+        EXPECT_TRUE(value);
+    }
+
+    {
+        using list_one = meta::typelist<int, double>;
+        using list_two = meta::typelist<float, bool>;
+
+        using result = list_one::extend<list_two>;
+
+        bool value = std::is_same<result,
+            meta::typelist<int, double, float, bool>>::value;
+        EXPECT_TRUE(value);
+    }
+
+    {
+        using list_one = meta::typelist<int>;
+        using list_two = meta::typelist<float, bool>;
+
+        using result = list_one::extend<list_two>;
+
+        bool value = std::is_same<result,
+            meta::typelist<int, float, bool>>::value;
+        EXPECT_TRUE(value);
+    }
+}
+
 
 TEST(test_type_list, find)
 {
