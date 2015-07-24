@@ -9,6 +9,7 @@
 #include "visitor.hpp"
 #include "remove.hpp"
 #include "not_found.hpp"
+#include "concatenate.hpp"
 
 namespace meta
 {
@@ -30,6 +31,17 @@ namespace meta
         ///
         template<class Type>
         using append = typelist<Types..., Type>;
+
+        /// The meta method extend appends the contents of input typelist
+        /// the current typelist.
+        ///
+        ///     using result = typelist<int, double>::
+        ///         extend<meta::typelist<float, bool>>;
+        ///
+        /// The result is typelist<int,double,float,bool>
+        ///
+        template<class List>
+        using extend = typename concatenate<typelist<Types...>, List>::type;
 
         /// Finds a type in the list.
         ///
