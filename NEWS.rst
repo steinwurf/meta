@@ -7,6 +7,8 @@ every change, see the Git log.
 Latest
 ------
 * tbd
+* Major: Upgrade to waf-tools 3
+* Minor: Upgrade to gtest 3
 
 1.1.0
 -----
