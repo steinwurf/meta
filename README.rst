@@ -106,6 +106,21 @@ an existing ``meta::typelist``.
              meta::typelist<double,float,int>>::value, "");
     }
 
+It is also possible to pass multiple types to ``meta::typelist::append``
+
+::
+
+    #include <meta/typelist.hpp>
+
+    int main()
+    {
+        using types = meta::typelist<bool>::append<double,float>;
+
+        static_assert(std::is_same<types,
+            meta::typelist<bool,double,float>>::value, "");
+    }
+
+
 Finding types
 .............
 
