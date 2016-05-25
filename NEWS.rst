@@ -6,7 +6,7 @@ every change, see the Git log.
 
 Latest
 ------
-* tbd
+* Minor: Allow multiple types to be added in ``append``.
 
 2.0.0
 -----

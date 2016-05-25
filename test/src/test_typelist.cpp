@@ -37,6 +37,26 @@ TEST(test_type_list, append)
     }
 }
 
+TEST(test_type_list, append_multiple)
+{
+    {
+        using types = meta::typelist<>::append<int,bool>;
+
+        bool value = std::is_same<types,
+            meta::typelist<int,bool>>::value;
+
+        EXPECT_TRUE(value);
+    }
+
+    {
+        using types = meta::typelist<double, float>::append<int,bool>;
+
+        bool value = std::is_same<types,
+            meta::typelist<double,float,int,bool>>::value;
+
+        EXPECT_TRUE(value);
+    }
+}
 
 TEST(test_type_list, extend)
 {
