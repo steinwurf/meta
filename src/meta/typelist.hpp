@@ -29,8 +29,8 @@ namespace meta
         ///
         /// The results is typelist<std::vector<int>,double>
         ///
-        template<class Type>
-        using append = typelist<Types..., Type>;
+        template<class... AppendTypes>
+        using append = typelist<Types..., AppendTypes...>;
 
         /// The meta method extend appends the contents of input typelist
         /// the current typelist.
