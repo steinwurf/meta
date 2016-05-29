@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 APPNAME = 'meta'
-VERSION = '2.0.0'
+VERSION = '2.1.0'
 
 
 import waflib.extras.wurf_options
@@ -57,5 +57,3 @@ def build(bld):
         # i.e. not when included as a dependency
         bld.recurse('test')
         bld.recurse('examples')
-
-
