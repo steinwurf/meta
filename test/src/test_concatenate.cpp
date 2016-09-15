@@ -17,7 +17,7 @@ TEST(test_concatenate, empty)
     using result = meta::concatenate<list_one, list_two>::type;
 
     bool value = std::is_same<result,
-        meta::typelist<>>::value;
+                 meta::typelist<>>::value;
 
     EXPECT_TRUE(value);
 }
@@ -30,7 +30,7 @@ TEST(test_concatenate, one_empty)
     using result = meta::concatenate<list_one, list_two>::type;
 
     bool value = std::is_same<result,
-        meta::typelist<int>>::value;
+                 meta::typelist<int>>::value;
 
     EXPECT_TRUE(value);
 }
@@ -43,7 +43,7 @@ TEST(test_concatenate, two_empty)
     using result = meta::concatenate<list_one, list_two>::type;
 
     bool value = std::is_same<result,
-        meta::typelist<int>>::value;
+                 meta::typelist<int>>::value;
 
     EXPECT_TRUE(value);
 }
@@ -56,7 +56,7 @@ TEST(test_concatenate, basic)
     using result = meta::concatenate<list_one, list_two>::type;
 
     bool value = std::is_same<result,
-        meta::typelist<int, double, float, bool>>::value;
+                 meta::typelist<int, double, float, bool>>::value;
     EXPECT_TRUE(value);
 }
 
@@ -68,6 +68,6 @@ TEST(test_concatenate, basic_unequal_length)
     using result = meta::concatenate<list_one, list_two>::type;
 
     bool value = std::is_same<result,
-        meta::typelist<int, float, bool>>::value;
+                 meta::typelist<int, float, bool>>::value;
     EXPECT_TRUE(value);
 }

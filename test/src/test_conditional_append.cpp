@@ -15,7 +15,7 @@ TEST(test_conditional_append, basic)
     {
         using result =
             meta::conditional_append<std::is_integral, meta::typelist<>,
-                int, double, float>::type;
+            int, double, float>::type;
 
         bool value = std::is_same<result, meta::typelist<int> >::value;
         EXPECT_TRUE(value);
@@ -24,7 +24,7 @@ TEST(test_conditional_append, basic)
     {
         using result =
             meta::conditional_append<std::is_integral, meta::typelist<>,
-                double, float>::type;
+            double, float>::type;
 
         bool value = std::is_same<result, meta::typelist<> >::value;
         EXPECT_TRUE(value);

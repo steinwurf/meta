@@ -15,5 +15,5 @@ int main()
     using result = types::append<int>;
 
     static_assert(std::is_same<result,
-         meta::typelist<double,float,int>>::value, "");
+                  meta::typelist<double,float,int>>::value, "");
 }

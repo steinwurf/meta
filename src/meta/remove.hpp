@@ -37,6 +37,6 @@ namespace meta
 
         // Call conditional append
         using type = typename
-            conditional_append<negate_prediate, typelist<>, Args...>::type;
+                     conditional_append<negate_prediate, typelist<>, Args...>::type;
     };
 }

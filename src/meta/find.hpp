@@ -50,7 +50,7 @@ namespace meta
         // If Predicate<T>::value is true then type = T
         // Else we call find for the next type in the list
         using type = typename std::conditional<
-            Predicate<T>::value,
-            T, typename find<Predicate, NotFound, List...>::type>::type;
+                     Predicate<T>::value,
+                     T, typename find<Predicate, NotFound, List...>::type>::type;
     };
 }

@@ -14,5 +14,5 @@ int main()
     using types = meta::typelist<>::append<double>::append<float>;
 
     static_assert(std::is_same<types,
-        meta::typelist<double,float>>::value, "");
+                  meta::typelist<double,float>>::value, "");
 }

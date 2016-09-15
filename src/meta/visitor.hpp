@@ -14,7 +14,7 @@ namespace meta
     struct visitor
     {
         template<class Visitor>
-        static void visit(Visitor&&){}
+        static void visit(Visitor&&) {}
     };
 
     // Specialization where there is at least one element in the list

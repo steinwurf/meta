@@ -46,10 +46,10 @@ namespace meta
     struct conditional_append<Predicate, TypeList, T, List...>
     {
         using type = typename std::conditional<
-            Predicate<T>::value,
-            typename conditional_append<Predicate,
-                typename TypeList::template append<T>, List...>::type,
-            typename conditional_append<Predicate,
-                TypeList, List...>::type>::type;
+                     Predicate<T>::value,
+                     typename conditional_append<Predicate,
+                     typename TypeList::template append<T>, List...>::type,
+                     typename conditional_append<Predicate,
+                     TypeList, List...>::type>::type;
     };
 }
