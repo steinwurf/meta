@@ -13,9 +13,9 @@ TEST(test_visitor, basic)
 {
     struct count
     {
-        void operator()(int){ m_int = true; }
-        void operator()(float){ m_float = true; }
-        void operator()(double){ m_double = true; }
+        void operator()(int) { m_int = true; }
+        void operator()(float) { m_float = true; }
+        void operator()(double) { m_double = true; }
 
         bool m_int = false;
         bool m_float = false;

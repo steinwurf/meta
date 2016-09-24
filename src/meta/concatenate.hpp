@@ -9,14 +9,14 @@
 
 namespace meta
 {
-    /// @brief Concatenates two typelists
-    template<class ListOne, class ListTwo>
-    struct concatenate;
+/// @brief Concatenates two typelists
+template<class ListOne, class ListTwo>
+struct concatenate;
 
-    // Specialization where we "extract" the types contained in the two lists
-    template<class... TypesOne, class... TypesTwo>
-    struct concatenate<typelist<TypesOne...>, typelist<TypesTwo...>>
-    {
-        using type = typelist<TypesOne...,TypesTwo...>;
-    };
+// Specialization where we "extract" the types contained in the two lists
+template<class... TypesOne, class... TypesTwo>
+struct concatenate<typelist<TypesOne...>, typelist<TypesTwo...>>
+{
+    using type = typelist<TypesOne...,TypesTwo...>;
+};
 }

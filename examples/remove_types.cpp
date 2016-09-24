@@ -18,5 +18,5 @@ int main()
     using result = types::remove<std::is_integral>;
 
     static_assert(std::is_same<result,
-        meta::typelist<std::vector<int>, double>>::value, "");
+                  meta::typelist<std::vector<int>, double>>::value, "");
 }

@@ -12,7 +12,7 @@
 
 namespace
 {
-    struct dummy{};
+struct dummy {};
 }
 
 // Tests that our concatenate meta function works properly
@@ -22,7 +22,7 @@ TEST(test_type_list, append)
         using types = meta::typelist<>::append<int>::append<bool>;
 
         bool value = std::is_same<types,
-            meta::typelist<int,bool>>::value;
+                     meta::typelist<int,bool>>::value;
 
         EXPECT_TRUE(value);
     }
@@ -31,7 +31,7 @@ TEST(test_type_list, append)
         using types = meta::typelist<double, float>::append<int>::append<bool>;
 
         bool value = std::is_same<types,
-            meta::typelist<double,float,int,bool>>::value;
+                     meta::typelist<double,float,int,bool>>::value;
 
         EXPECT_TRUE(value);
     }
@@ -43,7 +43,7 @@ TEST(test_type_list, append_multiple)
         using types = meta::typelist<>::append<int,bool>;
 
         bool value = std::is_same<types,
-            meta::typelist<int,bool>>::value;
+                     meta::typelist<int,bool>>::value;
 
         EXPECT_TRUE(value);
     }
@@ -52,7 +52,7 @@ TEST(test_type_list, append_multiple)
         using types = meta::typelist<double, float>::append<int,bool>;
 
         bool value = std::is_same<types,
-            meta::typelist<double,float,int,bool>>::value;
+                     meta::typelist<double,float,int,bool>>::value;
 
         EXPECT_TRUE(value);
     }
@@ -67,7 +67,7 @@ TEST(test_type_list, extend)
         using result = list_one::extend<list_two>;
 
         bool value = std::is_same<result,
-            meta::typelist<>>::value;
+                     meta::typelist<>>::value;
 
         EXPECT_TRUE(value);
     }
@@ -79,7 +79,7 @@ TEST(test_type_list, extend)
         using result = list_one::extend<list_two>;
 
         bool value = std::is_same<result,
-            meta::typelist<int>>::value;
+                     meta::typelist<int>>::value;
 
         EXPECT_TRUE(value);
     }
@@ -91,7 +91,7 @@ TEST(test_type_list, extend)
         using result = list_one::extend<list_two>;
 
         bool value = std::is_same<result,
-            meta::typelist<int>>::value;
+                     meta::typelist<int>>::value;
 
         EXPECT_TRUE(value);
     }
@@ -103,7 +103,7 @@ TEST(test_type_list, extend)
         using result = list_one::extend<list_two>;
 
         bool value = std::is_same<result,
-            meta::typelist<int, double, float, bool>>::value;
+                     meta::typelist<int, double, float, bool>>::value;
         EXPECT_TRUE(value);
     }
 
@@ -114,7 +114,7 @@ TEST(test_type_list, extend)
         using result = list_one::extend<list_two>;
 
         bool value = std::is_same<result,
-            meta::typelist<int, float, bool>>::value;
+                     meta::typelist<int, float, bool>>::value;
         EXPECT_TRUE(value);
     }
 }
@@ -167,9 +167,9 @@ TEST(test_type_list, visit)
 {
     struct count
     {
-        void operator()(int){ m_int = true; }
-        void operator()(float){ m_float = true; }
-        void operator()(double){ m_double = true; }
+        void operator()(int) { m_int = true; }
+        void operator()(float) { m_float = true; }
+        void operator()(double) { m_double = true; }
 
         bool m_int = false;
         bool m_float = false;
@@ -203,7 +203,7 @@ TEST(test_type_list, remove)
         using result = types::remove<std::is_integral>;
 
         bool value = std::is_same<result,
-            meta::typelist<double,float>>::value;
+                     meta::typelist<double,float>>::value;
 
         EXPECT_TRUE(value);
     }
@@ -214,7 +214,7 @@ TEST(test_type_list, remove)
         using result = types::remove<std::is_integral>;
 
         bool value = std::is_same<result,
-            meta::typelist<double,float>>::value;
+                     meta::typelist<double,float>>::value;
 
         EXPECT_TRUE(value);
     }
@@ -225,7 +225,7 @@ TEST(test_type_list, remove)
         using result = types::remove<std::is_integral>;
 
         bool value = std::is_same<result,
-            meta::typelist<>>::value;
+                     meta::typelist<>>::value;
 
         EXPECT_TRUE(value);
     }
