@@ -12,7 +12,7 @@
 
 namespace
 {
-    struct dummy {};
+struct dummy {};
 }
 
 // Tests that our concatenate meta function works properly

@@ -7,6 +7,6 @@
 
 namespace meta
 {
-    template<class... Types>
-    struct typelist;
+template<class... Types>
+struct typelist;
 }

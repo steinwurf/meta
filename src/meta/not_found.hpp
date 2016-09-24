@@ -7,6 +7,6 @@
 
 namespace meta
 {
-    /// Represents situations where we did not find a specific type
-    struct not_found {};
+/// Represents situations where we did not find a specific type
+struct not_found {};
 }
