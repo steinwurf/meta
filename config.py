@@ -9,7 +9,7 @@ try:
 except NameError:
     pass
 
-project_name = 'recycle'
+project_name = 'meta'
 project_dependencies = \
     [
         'waf-tools',
