@@ -16,15 +16,16 @@
 
 # Compiled Doxygen documentation
 /doxygen/html
-/doxygen/latex
 
-# For projects that use Waf for building: http://code.google.com/p/waf/
+# Waf files
 waf-*
+waf3-*
 .waf-*
 .waf3-*
 .lock-*
 build
-bundle_dependencies
+resolve_symlinks
+resolved_dependencies
 
 # Gnu Global tag files
 GPATH
@@ -37,15 +38,13 @@ GTAGS
 *.#*
 *~
 
-# compiled documentation
-*.pdf
-
 #Eclipse ignore
 .cproject
-.project
+*.project
 .metadata
 local.properties
 .classpath
+.settings/
 
 # Visual Studio ignore
 *.bat
@@ -56,9 +55,5 @@ local.properties
 *.sdf
 *.opensdf
 *.log
+*.vcxproj*
 VSProjects
-
-# Benchmark output
-figures_database
-figures_database_detailed
-figures_local
